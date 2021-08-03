@@ -42,3 +42,12 @@ border-radius:100px;
      
 
 }
+.play_button{
+     width:130px;
+     font-size:25px;
+
+}
+canvas{
+     border:5px solid yellow;
+     border-radius:20px;
+}
