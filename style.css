@@ -6,7 +6,7 @@
 }
 .note{
      font-size:15px;
-     color:black;
+     color:rgb(255, 0, 0);
 
 }
 body{
@@ -48,6 +48,6 @@ border-radius:100px;
 
 }
 canvas{
-     border:5px solid yellow;
+     border:5px solid rgb(38, 0, 255);
      border-radius:20px;
 }

@@ -17,6 +17,15 @@ function setup(){
 }
 function draw(){
      image(video,0,0,600,500);
+     fill("#FF0000");
+     stroke("#FF0000");
+     circle(leftWristX,leftWristY,20);
+     InNumberleftWristY=Number(leftWristY);
+     remove_decimals=floor(InNumberleftWristY);
+     volume=remove_decimals/500;
+     document.getElementById("volume").innerHTML="Volume="+volume;
+     song.setVolume(volume);
+     
 }
 function play(){
      song.play();
@@ -30,11 +39,12 @@ function modelLoaded(){
 function gotPoses(results){
 if(results.length>0){
      console.log(results);
-     leftWristX=results[0].pose.leftWrist.x;
+ leftWristX=results[0].pose.leftWrist.x;
 leftWristY=results[0].pose.leftWrist.y;
+console.log(" leftWristX= " + leftWristX + " leftWristY= " + leftWristY );
+
 rightWristX=results[0].pose.rightWrist.x;
 rightWristY=results[0].pose.rightWrist.y;
-console.log(" leftWristX= " + leftWristX + " leftWristY= " + leftWristY );
 console.log(" rightWristX= " + rightWristX + " rightWristY= " + rightWristY );
 
 }
