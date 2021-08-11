@@ -3,6 +3,7 @@ leftWristY=0;
 rightWristX=0;
 rightWristY=0;
 scoreLeftWrist=0;
+scoreRightWrist=0;
 song="";
 function preload(){
      song=loadSound('music.mp3');
@@ -20,6 +21,7 @@ function draw(){
      image(video,0,0,600,500);
      fill("#FF0000");
      stroke("#FF0000");
+     if(scoreRightWrist>0.2){
      circle(rightWristX,rightWristY,20);
      if(rightWristY>0 &&rightWristY<=100){
           document.getElementById("speed").innerHTML="speed=0.5x";
@@ -40,7 +42,7 @@ function draw(){
      else if(rightWristY>400 && rightWristY<=500){
           document.getElementById("speed").innerHTML="speed=2.5x";
           song.rate(2.5);
-     }
+     }}
      if(scoreLeftWrist>0.2){
      circle(leftWristX,leftWristY,20);
      InNumberleftWristY=Number(leftWristY);
@@ -63,7 +65,9 @@ function gotPoses(results){
 if(results.length>0){
      console.log(results);
 scoreLeftWrist=results[0].pose.keypoints[9].scoreLeftWrist;
+scoreRightWrist=results[0].pose.keypoints[9].scoreRightWrist;
 console.log("scoreLeftWrist=" + scoreLeftWrist);
+console.log("scoreLeftWrist=" + scoreRightWrist);
  leftWristX=results[0].pose.leftWrist.x;
 leftWristY=results[0].pose.leftWrist.y;
 console.log(" leftWristX= " + leftWristX + " leftWristY= " + leftWristY );
